@@ -1,47 +1,4 @@
 
-\# \[Asteria]
-
-> Scheduling and shuffling time application.
-
-\*\*Author:\*\* Romnis Ortiz · \*\*Course:\*\* CMP 464/343 Product 1 · \*\*Last updated:\*\* 10/23/26
-
-\---
-
-\## 1. About Me (the User)
-
-\*Who am I in the context of this problem? What roles am I playing (student, employee, parent, athlete, gamer…)?\*
-
-In the context of this problem I am just about anyone with a daily schedule/routine. So I am playing the role of a student, employee, parent, etc. Everyone
-
-\*\*The last 3 times this happened:\*\*  
-\*Real, recent moments. For each: when and where, what went wrong, what it cost, what you did.\*
-
-1\.  Today in class 9/28, I was 6 minutes late. No real cost.  
-2.  Last week , I was late to work by 2 minutes, no penalty though.  
-3.  Sometimes I submit classwork on the same day its due just hours before its deadline.
-
-\*\*What it costs me:\*\*  
-\*Be specific. How often, how much?\*
-
-\-  Time: couple minutes
-
-* Money: nothing really
-* Energy: a bit, since im usually running to get to work or to get to class or to submit things.
-* Joy: not much since a couple minutes isn’t too big of a penalty in my personal life. But sometimes I dread doing a piece of schoolwork.
-
-\---
-
-\## 2. Problem Statement
-
-\*\*Gut check:\*\*
-
-> I need \\\*\\\*a better way to adjust and organize/reorganize my day/week\\\*\\\* because \\\*\\\*I struggle to manage my time when my plans are suddenly changed/interrupted\\\*\\\*.
-
-\*\*Five Whys:\*\*
-
-
-
-
 # [Asteria]
 
 > Scheduling and shuffling time application.
