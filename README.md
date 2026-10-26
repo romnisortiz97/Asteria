@@ -106,19 +106,10 @@ View schedule by day, week, or month | Allows me to see how activities and dates
 ### Back end
 | Piece | Choice | Why |
 |---|---|---|
-| Server / API |
-Server/ API
-Next.js + React
-Builds the website
-Data Storage
-SQLite
-Stores your schedule
-Hosting
-Vercel
-Hosts website
-additional
-Turso
-Lets SQLite work as an online database with vercel.
+ Server / API | Next.js + React | Builds the website
+Data Storage | SQLite | Stores the schedule
+Hosting | Vercel | Hosts website
+additional | Turso | Lets SQLite work as an online database with vercel.
 
  | |
 | Data storage | | |
