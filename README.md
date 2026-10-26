@@ -86,7 +86,7 @@ Most planning methods/apps/programs have too many steps and setup so I prefer pl
 
 **MVP (2–3 features):** *The skateboard: the smallest version I'd actually use.*
 
-* create time blocks, moving the time blocks around.
+* create time blocks, moving the time blocks around. Resize the time blocks
 
 **Later:**
 
