@@ -86,11 +86,11 @@ Most planning methods/apps/programs have too many steps and setup so I prefer pl
 
 **MVP (2–3 features):** *The skateboard: the smallest version I'd actually use.*
 
-* receive schedule data, save and load said data.
+* create time blocks, moving the time blocks around.
 
 **Later:**
 
-* moving them around and making it look clean and presentable
+*  making it look clean and presentable
 
 **Not doing:** *Things I'm deliberately leaving out.*
 
