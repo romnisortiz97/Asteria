@@ -91,6 +91,7 @@ Most planning methods/apps/programs have too many steps and setup so I prefer pl
 **Later:**
 
 *  making it look clean and presentable
+*  making each schedule save to a database
 
 **Not doing:** *Things I'm deliberately leaving out.*
 
