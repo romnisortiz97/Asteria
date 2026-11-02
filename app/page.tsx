@@ -338,7 +338,7 @@ export default function Home() {
                 className="absolute left-0 top-0 bottom-0 w-3 cursor-ew-resize hover:bg-white/30 z-10"
                 onPointerDown={(e) => onPointerDown(e, b, "resize-left")}
               />
-              <span className="pl-5 pr-6 truncate pointer-events-none leading-tight text-left">
+              <span className="pl-5 pr-8 truncate pointer-events-none leading-tight text-left">
                 {b.title}
                 <br />
                 {isNarrow ? (
@@ -366,7 +366,7 @@ export default function Home() {
                   removeBlock(b.id);
                 }}
                 onPointerDown={(e) => e.stopPropagation()}
-                className="absolute top-0.5 right-1 text-white/80 hover:text-white text-xs font-bold leading-none z-20"
+                className="absolute top-0.5 right-4 text-white hover:text-white text-sm font-bold leading-none z-20"
                 title="Remove"
               >
                 ×
@@ -377,7 +377,7 @@ export default function Home() {
       </div>
 
       <p className="text-sm text-gray-500 mt-2">
-        Click × on a block to remove it
+        Sample week
       </p>
     </div>
   );
