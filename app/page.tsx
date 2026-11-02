@@ -42,7 +42,7 @@ export default function Home() {
     originalStart: number;
     originalDuration: number;
     lastValidStart: number;
-    dragDirection: number; // positive = right, negative = left
+    dragDirection: number;
   } | null>(null);
 
   useEffect(() => {
@@ -101,27 +101,14 @@ export default function Home() {
     const d = snap(Math.max(15, duration));
 
     const blocker = getOverlappingBlock(s, d, ignoreId);
-    if (!blocker) {
-      return { start: s, duration: d };
-    }
+    if (!blocker) return { start: s, duration: d };
 
-    // Jump to the other side based on drag direction
-    let jumped: number;
-    if (direction > 0) {
-      // Moving right → place after the blocker
-      jumped = blocker.start + blocker.duration;
-    } else {
-      // Moving left → place before the blocker
-      jumped = blocker.start - d;
-    }
-
+    let jumped = direction > 0 ? blocker.start + blocker.duration : blocker.start - d;
     jumped = snap(Math.max(0, Math.min(DAY - d, jumped)));
 
     if (!getOverlappingBlock(jumped, d, ignoreId)) {
       return { start: jumped, duration: d };
     }
-
-    // Fallback: stay at last valid position
     return { start: lastValid, duration: d };
   };
 
@@ -152,6 +139,10 @@ export default function Home() {
       },
     ]);
     setTitle("");
+  };
+
+  const removeBlock = (id: string) => {
+    setBlocks((prev) => prev.filter((b) => b.id !== id));
   };
 
   const toggleTimePicker = (
@@ -205,7 +196,6 @@ export default function Home() {
       const mouseMin = pxToMinutes(e.clientX - rect.left, rect.width);
       const delta = mouseMin - interaction.current.startMouseMin;
 
-      // Track direction
       if (Math.abs(delta) > 2) {
         interaction.current.dragDirection = delta > 0 ? 1 : -1;
       }
@@ -230,7 +220,6 @@ export default function Home() {
             return { ...b, ...result };
           }
 
-          // Resize: still block on overlap
           let candidateStart = originalStart;
           let candidateDuration = originalDuration;
 
@@ -245,9 +234,7 @@ export default function Home() {
           let snappedDur = snap(Math.max(15, candidateDuration));
           if (snappedStart + snappedDur > DAY) snappedDur = DAY - snappedStart;
 
-          if (getOverlappingBlock(snappedStart, snappedDur, id)) {
-            return b;
-          }
+          if (getOverlappingBlock(snappedStart, snappedDur, id)) return b;
           return { ...b, start: snappedStart, duration: snappedDur };
         })
       );
@@ -351,7 +338,7 @@ export default function Home() {
                 className="absolute left-0 top-0 bottom-0 w-3 cursor-ew-resize hover:bg-white/30 z-10"
                 onPointerDown={(e) => onPointerDown(e, b, "resize-left")}
               />
-              <span className="pl-5 pr-5 truncate pointer-events-none leading-tight text-left">
+              <span className="pl-5 pr-6 truncate pointer-events-none leading-tight text-left">
                 {b.title}
                 <br />
                 {isNarrow ? (
@@ -373,13 +360,24 @@ export default function Home() {
                 className="absolute right-0 top-0 bottom-0 w-3 cursor-ew-resize hover:bg-white/30 z-10"
                 onPointerDown={(e) => onPointerDown(e, b, "resize-right")}
               />
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  removeBlock(b.id);
+                }}
+                onPointerDown={(e) => e.stopPropagation()}
+                className="absolute top-0.5 right-1 text-white/80 hover:text-white text-xs font-bold leading-none z-20"
+                title="Remove"
+              >
+                ×
+              </button>
             </div>
           );
         })}
       </div>
 
       <p className="text-sm text-gray-500 mt-2">
-        Drag into a block to jump to the other side · Resizing still stops at edges
+        Click × on a block to remove it
       </p>
     </div>
   );
