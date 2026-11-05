@@ -377,7 +377,7 @@ export default function Home() {
       </div>
 
       <p className="text-sm text-gray-500 mt-2">
-        Sample week
+        Sample day
       </p>
     </div>
   );
